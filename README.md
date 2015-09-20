@@ -12,8 +12,8 @@ Implementation hours: 10
 - view movies or dvds in a list
 - click on movie to view details
 - user can refresh the list by pulling down at the top of the screen. since we are using cached data, there will not be any observed change in the list contents
-- network errors display an alert. in this app, a network error is indicated when a URL fetch returns error; the app does not check for network status via low level APIs. 
-- to simulate the network error, every 5th pull-to-refresh will trigger a URL fetch to a bad address, which should result in a network error alert
+- network errors display an alert. in this app, a network error is indicated when the URL fetch returns an error; the app does not check for network status via low level APIs. 
+- to simulate the network error, every 5th pull-to-refresh will force a URL fetch to an invalid address, which should result in a network error alert
 - user can switch between movies and dvds via a handy dandy navigation at the bottom of the screen
 - user can filter the movies/dvd lists with a search bar. the list changes as the user types letters
 - images are loaded asynchronously, and loaded from cache when possible
@@ -25,7 +25,7 @@ Implementation hours: 10
 - [x] User can view a list of movies. Poster images load asynchronously.
 - [x] User can view movie details by tapping on a cell.
 - [x] User sees loading state while waiting for the API.
-- [x] User sees error message when there is a network error: [image](RottenTomatoes/RottenTomatoes_Error.png)
+- [x] User sees error message when there is a network error: [networkError]
 - [x] User can pull to refresh the movie list.
 
 #### Optional
@@ -44,6 +44,9 @@ Implementation hours: 10
 
 ![Video Walkthrough](RottenTomatoes/RottenTomatoesWalkthrough.gif)
 
+Network Error Capture
+<img src="RottenTomatoes/RottenTomatoes_Error.png" height="600" width="337">
+
 Walkthrough provided by licecap (http://www.cockos.com/licecap/)
 
 Credits
@@ -53,6 +56,10 @@ Credits
 * DVD File icon by mantisshrimpdesign from the Noun Project
 * movie reel icon by Josue Oquendo from the Noun Project
 * Homer Simpson for the creation of tomacco
+ 
+
+[network-alert]: RottenTomatoes/RottenTomatoes_Error.png
+
 
 
 
