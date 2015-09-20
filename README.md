@@ -20,11 +20,15 @@ Implementation hours: 10
 
 - [ ] Add a tab bar for Box Office and DVD.
 - [ ] Implement segmented control to switch between list view and grid view.
-- [ ] Add a search bar.
+- [x] Add a search bar.
 - [x] All images fade in.
 - [x] For the large poster, load the low-res image first, switch to high-res when complete.
 - [x] Customize the highlight and selection effect of the cell.
-- [ ] Customize the navigation bar.
+- [x] Customize the navigation bar.
+
+#### Acknowledgements
+DVD File by mantisshrimpdesign from the Noun Project
+movie reel by Josue Oquendo from the Noun Project
 
 ### Walkthrough
 
