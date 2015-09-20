@@ -15,6 +15,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var networkAlertView: UIView!
     @IBOutlet weak var movieSearchBar: UISearchBar!
     
+    static var viewCount : Int = 0
+    
     var movies: [NSDictionary]? {
         didSet {
             networkAlertView.hidden = true
@@ -25,14 +27,28 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var filteredMovies: [NSDictionary]?
     
+    enum FetchType : Int{
+        case Movies, DVD
+    }
+    
     // pull to refresh
     var refreshControl:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set the title
-        self.title = "Moovies"
+        
+        if let typeIndex = self.tabBarController?.selectedIndex as Int! {
+            if let type = FetchType(rawValue: typeIndex) {
+                switch type {
+                case .Movies:
+                    self.title = "Moovies"
+                case .DVD:
+                    self.title = "DVDs"
+                    
+                }
+            }
+        }
         
         movieTableView.delegate = self
         movieTableView.dataSource = self
@@ -63,8 +79,20 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.labelText = "Getting Movies"
-
-        let goodURL = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")
+        
+        var goodURL : NSURL?
+        
+        if let typeIndex = self.tabBarController?.selectedIndex as Int! {
+            if let type = FetchType(rawValue: typeIndex) {
+                switch type {
+                    case .Movies:
+                        goodURL = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")
+                    case .DVD:
+                        goodURL = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")
+                }
+            }
+        }
+        
         let goodRequest = NSURLRequest(URL: goodURL!)
         let badURL = NSURL(string: "this.is.a.dummy.website")
         let badRequest = NSURLRequest(URL: badURL!)
@@ -150,6 +178,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             })
             movieTableView.reloadData()
         }
+    }
+    
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
     

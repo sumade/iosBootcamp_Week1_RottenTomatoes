@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ZfC-jg-Alp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ZG0-F0-0JY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Movies-->
         <scene sceneID="stp-6r-pMD">
             <objects>
-                <viewController title="Movies" id="lbQ-eG-MXf" customClass="MoviesViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="moviesViewController" title="Movies" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lbQ-eG-MXf" customClass="MoviesViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5W-Gn-n6k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,11 +242,13 @@
             </objects>
             <point key="canvasLocation" x="1277" y="387"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Moovie-->
         <scene sceneID="pQM-zH-oZZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZfC-jg-Alp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Moovie" image="movie" selectedImage="movie" id="sK1-Rf-hSV"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TiU-An-KlF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0b0-QP-sZc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,8 +266,48 @@
             </objects>
             <point key="canvasLocation" x="222" y="387"/>
         </scene>
+        <!--DVD-->
+        <scene sceneID="nZW-5g-AJk">
+            <objects>
+                <navigationController id="OeE-vw-XhW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="DVD" image="dvd" id="dPI-j8-wMh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKM-cw-cPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lbQ-eG-MXf" kind="relationship" relationship="rootViewController" id="ZpA-OL-Jv3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YqB-xc-RcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="1231"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="rlb-Dy-fxL">
+            <objects>
+                <tabBarController id="ZG0-F0-0JY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ajR-yb-y9J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZfC-jg-Alp" kind="relationship" relationship="viewControllers" id="mWR-px-JLR"/>
+                        <segue destination="OeE-vw-XhW" kind="relationship" relationship="viewControllers" id="Iw0-3j-yOr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3I-MP-aQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-656" y="577"/>
+        </scene>
     </scenes>
     <resources>
         <image name="doh" width="200" height="150"/>
+        <image name="dvd" width="25" height="25"/>
+        <image name="movie" width="25" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZpA-OL-Jv3"/>
+    </inferredMetricsTieBreakers>
 </document>

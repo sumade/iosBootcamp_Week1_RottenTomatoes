@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.swift"
-            timestampString = "464471736.528617"
+            timestampString = "464480256.369519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "MoviesViewController"
-            landmarkType = "3">
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.swift"
-            timestampString = "464471736.528617"
+            timestampString = "464480256.369519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "MoviesViewController"
-            landmarkType = "3">
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MoviesViewController.swift"
-            timestampString = "464471736.528617"
+            timestampString = "464480256.369519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "fetchMovieData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/MovieDetailViewController.swift"
-            timestampString = "464469867.488326"
+            timestampString = "464483168.495907"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RottenTomatoes/MoviesViewController.swift"
+            timestampString = "464480256.369519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>

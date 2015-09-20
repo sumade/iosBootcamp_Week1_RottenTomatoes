@@ -69,7 +69,7 @@ class MovieDetailViewController: UIViewController {
                         success: { (request, response, image) -> Void in
                             dispatch_async(dispatch_get_main_queue(), {
                                 UIView.transitionWithView(self.posterImage,
-                                    duration:3,
+                                    duration:2,
                                     options: .TransitionCrossDissolve,
                                     animations: {
                                         self.posterImage.image = image
@@ -82,17 +82,22 @@ class MovieDetailViewController: UIViewController {
                     })
 
                 }
+            }else{
+                posterImage.image = nil
             }
 
             
             titleLabel.text = movie.title
             if let rating = movie.mpaaRating {
                 mpaaRatingLabel.text = "Rating: \(rating)"
+            }else{
+                mpaaRatingLabel.text = "Rating: ???"
             }
-            
             
             if let year = movie.year {
                 yearLabel.text = String(year)
+            }else{
+                yearLabel.text = ""
             }
             
             if let date = movie.releaseDate {
@@ -101,10 +106,14 @@ class MovieDetailViewController: UIViewController {
                 dayTimePeriodFormatter.dateFormat = "MMMM dd, yyyy"
                 
                 releaseDateLabel.text = dayTimePeriodFormatter.stringFromDate(date)
+            }else{
+                releaseDateLabel.text = ""
             }
                 
             if let runtime = movie.runtime {
                 runtimeLabel.text = "Runtime \(runtime) min"
+            }else{
+                runtimeLabel.text = "Runtime ??? min"
             }
             
             audienceRatingsLabel.text = ""
@@ -112,6 +121,8 @@ class MovieDetailViewController: UIViewController {
                 if let audienceRatingNum = movie.ratings?["audience_score"] as? Int {
                     audienceRatingsLabel.text = "\(audienceRating) (\(audienceRatingNum)%)"
                 }
+            }else{
+                audienceRatingsLabel.text = ""
             }
 
             criticsRatingLabel.text = ""
@@ -119,18 +130,24 @@ class MovieDetailViewController: UIViewController {
                 if let criticsRatingNum = movie.ratings?["critics_score"] as? Int {
                     criticsRatingLabel.text =   "\(criticsRatings) (\(criticsRatingNum)%)"
                 }
+            }else{
+                criticsRatingLabel.text = ""
             }
 
             if let text = movie.synopsis {
                 synopsisLabel.numberOfLines = 0
                 synopsisLabel.text = text
                 synopsisLabel.layoutIfNeeded()
+            }else{
+                synopsisLabel.text = ""
             }
             
             // comma separated list of cast
             if let cast = movie.cast?.map({$0["name"] as! String}) {
                 let castStr = cast.joinWithSeparator(", ")
                 castLabel.text = "Cast: \(castStr)"
+            }else{
+                castLabel.text = ""
             }
             
             
