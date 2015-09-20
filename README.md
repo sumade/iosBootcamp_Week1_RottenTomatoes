@@ -53,8 +53,10 @@ Credits
 ---------
 * [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [MBProgressHUD](https://github.com/jdg/MBProgressHUD)
 * DVD File icon by mantisshrimpdesign from the Noun Project
 * movie reel icon by Josue Oquendo from the Noun Project
+* My wife for not getting upset at the time I spent on this project
 * Homer Simpson for the creation of tomacco
  
 
